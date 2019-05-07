@@ -90,7 +90,7 @@ class CloudflareDNSAPI{
             echo $json;
             header('Content-Type: application/json');
         } else {
-            $success_result = array('result'  => 'success','message' => 'DNS Records was successfuly created','data' => array('id'=> $id_api, 'subdomain' => $newarray["result"]["name"], 'ip_address' => $ip ),);
+            $success_result = array('result'  => 'success','message' => 'DNS Records was successfuly created','data' => array('id'=> $id_api, 'subdomain' => $newarray["result"]["name"], 'content' => $content ),);
             $json = json_encode($success_result, JSON_PRETTY_PRINT);
             echo $json;
             header('Content-Type: application/json');
