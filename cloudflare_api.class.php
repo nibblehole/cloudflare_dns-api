@@ -60,12 +60,12 @@ class CloudflareDNSAPI{
         if($id_api == NULL){
             $error = array("result" => "error", "message" => $newarray["errors"][0]["message"]);
             $json = json_encode($error);
-            echo $json;
+            return $json;
             header('Content-Type: application/json');
         } else {
             $success_result = array('result'  => 'success','message' => 'DNS Records was successfuly created','data' => array('id'=> $id_api, 'subdomain' => $newarray["result"]["name"], 'ip_address' => $ip ),);
             $json = json_encode($success_result, JSON_PRETTY_PRINT);
-            echo $json;
+            return $json;
             header('Content-Type: application/json');
         }
     }
@@ -87,12 +87,12 @@ class CloudflareDNSAPI{
         if($id_api == NULL){
             $error = array("result" => "error", "message" => $newarray["errors"][0]["message"]);
             $json = json_encode($error);
-            echo $json;
+            return $json;
             header('Content-Type: application/json');
         } else {
             $success_result = array('result'  => 'success','message' => 'DNS Records was successfuly created','data' => array('id'=> $id_api, 'subdomain' => $newarray["result"]["name"], 'content' => $content ),);
             $json = json_encode($success_result, JSON_PRETTY_PRINT);
-            echo $json;
+            return $json;
             header('Content-Type: application/json');
         }
     }
