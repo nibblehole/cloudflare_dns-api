@@ -50,7 +50,7 @@ class CloudflareDNSAPI{
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         $headers = [ 'X-Auth-Email:'.$this->email, 'X-Auth-Key:'.$this->auth_key, 'Content-Type: application/json'];
-        $data = array( 'type' => 'A' , 'name' => $domain, 'content' => $content, 'TTL' => '1', 'priority' => '10' );
+        $data = array( 'type' => 'A' , 'name' => $domain, 'content' => $content, 'TTL' => 1, 'priority' => 10 );
         $data_string = json_encode($data); 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -77,7 +77,7 @@ class CloudflareDNSAPI{
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         $headers = [ 'X-Auth-Email:'.$this->email, 'X-Auth-Key:'.$this->auth_key, 'Content-Type: application/json'];
-        $data = array( 'type' => 'CNAME' , 'name' => $domain, 'content' => $ip, 'TTL' => '1', 'priority' => '10' );
+        $data = array( 'type' => 'CNAME' , 'name' => $domain, 'content' => $ip, 'TTL' => 1, 'priority' => 10 );
         $data_string = json_encode($data); 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
